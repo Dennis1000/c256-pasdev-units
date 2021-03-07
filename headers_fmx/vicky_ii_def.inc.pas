@@ -113,8 +113,8 @@ const
   BTX_START               = $AFE000;  // BEATRIX Registers
   BTX_END                 = $AFFFFF;
 
-{$include 'VKYII_CFP9553_BITMAP_def.asm'
-{$include 'VKYII_CFP9553_TILEMAP_def.asm'
-{$include 'VKYII_CFP9553_VDMA_def.asm'
-{$include 'VKYII_CFP9553_SDMA_def.asm'
-{$include 'VKYII_CFP9553_SPRITE_def.asm'
+{$include 'VKYII_CFP9553_BITMAP_def.inc.pas'}
+{$include 'VKYII_CFP9553_TILEMAP_def.inc.pas'}
+{$include 'VKYII_CFP9553_VDMA_def.inc.pas'}
+{$include 'VKYII_CFP9553_SDMA_def.inc.pas'}
+{$include 'VKYII_CFP9553_SPRITE_def.inc.pas'}
