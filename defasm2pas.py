@@ -1,11 +1,17 @@
 # Read def.asm file and convert it to a .inc.pas file
-# v1.0.1
+# v1.0.2
 
 import sys
 import ntpath
 
-filename = sys.argv[2].replace('"','')
-outputPath = sys.argv[1].replace('"','')
+#print (sys.argv)
+
+filename = sys.argv[2].replace("'",'')
+outputPath = sys.argv[1].replace("'",'')
+
+prefix = ''
+if len(sys.argv) >= 4:
+  prefix = sys.argv[3].replace("'",'').strip()
 
 with open(filename+'.asm') as file_in:
     lines = []
@@ -26,7 +32,7 @@ with open(filename+'.asm') as file_in:
 
          # semicolon is needed for const expression
          if line.find('=') != -1:
-             line = '  ' + line.rstrip() + ';'
+             line = '  ' + prefix + line.rstrip() + ';'
              if firstConst:
                 firstConst = False
                 lines.append('const\n')
